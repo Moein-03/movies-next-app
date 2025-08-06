@@ -1,0 +1,45 @@
+{
+  "name": "movies-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"next dev --turbopack\" \"cd server && pnpm start\"",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "@types/uuid": "^10.0.0",
+    "clsx": "^2.1.1",
+    "concurrently": "^9.2.0",
+    "daisyui": "^5.0.43",
+    "framer-motion": "^12.23.0",
+    "next": "15.4.0-canary.114",
+    "next-auth": "^4.24.11",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-intersection-observer": "^9.16.0",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss-animate": "^1.0.7",
+    "uuid": "^11.1.0",
+    "zustand": "^5.0.6"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@types/node": "^20.19.4",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "eslint": "^9.30.1",
+    "eslint-config-next": "15.3.5",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3"
+  },
+  "overrides": {
+    "framer-motion": {
+      "react": "19.0.0-rc-66855b96-20241106",
+      "react-dom": "19.0.0-rc-66855b96-20241106"
+    }
+  }
+}

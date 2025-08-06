@@ -1,0 +1,78 @@
+{
+     "casts": [
+          {
+               "castId": "C1",
+               "castName": "Kenneth Branagh",
+               "castPic": "/cast/194_v9_bb.jpg",
+               "castGender": "male",
+               "castAge": 64
+          },
+          {
+               "castId": "C2",
+               "castName": "Elizabeth Debicki",
+               "castPic": "/cast/MV5BNTMyZmM5MDMtNzZiMS00ZjhjLTg0NWEtY2JiOWU3ODg5ZWViXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+               "castGender": "female",
+               "castAge": 34
+          },
+          {
+               "castId": "C3",
+               "castName": "Sofia Eng",
+               "castPic": "/cast/gettyimages-78625218-612x612.jpg",
+               "castGender": "female",
+               "castAge": 53
+          }
+     ],
+
+     "movies": [
+          {
+               "movieId": "m1",
+               "movieCat": "drama",
+               "movieTitle": "Tenet",
+               "movieDescription": "When a few objects that can be manipulated and used as weapons in the future fall into the wrong hands, a CIA operative, known as the Protagonist, must save the world.",
+               "productionYear": 2020,
+               "movieView": 0,
+               "moviePic": "/movie/Tenet_movie_poster.jpg",
+               "movieCast": [
+                    {
+                         "castId": "C1",
+                         "castName": "Kenneth Branagh",
+                         "castPic": "/cast/194_v9_bb.jpg",
+                         "castGender": "male",
+                         "castAge": 64
+                    },
+                    {
+                         "castId": "C2",
+                         "castName": "Elizabeth Debicki",
+                         "castPic": "/cast/MV5BNTMyZmM5MDMtNzZiMS00ZjhjLTg0NWEtY2JiOWU3ODg5ZWViXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+                         "castGender": "female",
+                         "castAge": 34
+                    }
+               ]
+          },
+          {
+               "movieId": "m2",
+               "movieCat": "western",
+               "movieTitle": "Wild Wild West",
+               "movieDescription": "Special Agent Jim West and inventive US Marshal Artemus Gordon are ordered by President Ulysses Grant to team up to save the world from Dr Arliss Loveless's enormous steam-powered tarantula.",
+               "productionYear": 1999,
+               "movieView": 0,
+               "moviePic": "/movie/81zVBzKdhbL._UF894,1000_QL80_.jpg",
+               "movieCast": [
+                    {
+                         "castId": "C1",
+                         "castName": "Kenneth Branagh",
+                         "castPic": "/cast/194_v9_bb.jpg",
+                         "castGender": "male",
+                         "castAge": 64
+                    },
+                    {
+                         "castId": "C3",
+                         "castName": "Sofia Eng",
+                         "castPic": "/cast/gettyimages-78625218-612x612.jpg",
+                         "castGender": "female",
+                         "castAge": 53
+                    }
+               ]
+          }
+     ]
+}
