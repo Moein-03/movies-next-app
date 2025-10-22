@@ -1,8 +1,9 @@
 "use client"
 import SignInBtn from "../client/ClientButtons/SignInBtn";
 import SignOutBtn from "../client/ClientButtons/SignOutBtn";
+import { Session } from "next-auth";
 
-const Avatar =  ( { session }: { session: any }) => {
+const Avatar =  ( { session }: { session: Session }) => {
 
      return (
           <div className="flex gap-2">
