@@ -2,13 +2,14 @@ import { MovieType } from '@/DataType'
 import { MotionDiv } from '../client/MotionDiv'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Session } from "next-auth";
 
 const variants = {
      hidden: { opacity: 0 },
      visible: { opacity: 1 }
 }
 
-const MovieCard = ({ movie, index, session }: { movie: MovieType, index: number, session: any }) => {
+const MovieCard = ({ movie, index, session }: { movie: MovieType, index: number, session: Session | null }) => {
      return (
           <MotionDiv
                className="card card-side bg-base-100 shadow-sm py-1 w-[27rem] h-[20rem] mt-1"
