@@ -1,6 +1,5 @@
 "use server"
-
-import { MovieType } from "@/DataType";
+import { MovieType } from "./DataType";
 
 export const GetMovie = async (page: number) => {
     const res = await fetch(`https://my-json-server.typicode.com/moein-03/movies-next-app-api/movies?movieId=${'m' + page}&_page=${page}&_limit=1&_sort=productionYear&_order=desc`);
@@ -37,7 +36,7 @@ export const addView = async (movieId: string) => {
 
 
 
-/* export const searchMovies = async (query: string, page: number = 1) => {
+export const searchMovies = async (query: string, page: number = 1) => {
     try {
         const res = await fetch(`https://my-json-server.typicode.com/moein-03/movies-next-app-api/movies?movieTitle_like=${query}&_page=${page}&_limit=1&_sort=productionYear&_order=desc`);
         if (!res.ok) throw new Error('error in searching the movies');
@@ -48,7 +47,7 @@ export const addView = async (movieId: string) => {
         console.error('Search error:', error);
         return null;
     }
-}; */
+};
 
 export const addMovie = async (newMovie: MovieType) => {
     const res = await fetch('https://my-json-server.typicode.com/moein-03/movies-next-app-api/movies', {

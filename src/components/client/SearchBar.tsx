@@ -1,21 +1,23 @@
 'use client';
 
 import { useState } from "react";
-import LoadMovies from './LoadMovies'
-import { getMovie, searchMovies } from '@/movieActions'
+import { searchMovies } from '@/movieActions'
 
 const SearchInput = () => {
-  const [query, setQuery] = useState('')
-  const [searching, setSearching] = useState(false)
+  const [query, setQuery] = useState('');
+  const [searching, setSearching] = useState(false);
+  const [page, setPage] = useState(1);
 
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const input = new FormData(e.currentTarget).get('search') as string;
-    setQuery(input.trim());
-    setSearching(input.trim().length > 0);
+    const trimmed = input.trim();
 
-    if (searching && query) {
-      return await searchMovies(query, page)
+    setQuery(trimmed);
+    setSearching(trimmed.length > 0);
+
+    if (trimmed.length > 0) {
+      const res = await searchMovies(trimmed, page);
     }
   }
 
