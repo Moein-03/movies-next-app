@@ -1,5 +1,4 @@
 import { GetMovie } from '@/movieActions';
-import { MovieType } from '@/DataType';
 import { Suspense } from 'react';
 import CastCard from '@/components/server/CastCard';
 import { MotionDiv } from '@/components/client/MotionDiv';
@@ -11,13 +10,11 @@ const page = async ({ params }: { params: Promise<{ movieId: string }> }) => {
      const session = await auth();
      const resolvedParams = await params;
      const movieId = resolvedParams.movieId;
-     const page = movieId.slice(1, movieId.length);
-     let movie: MovieType;
+     // const page = movieId.slice(1, movieId.length);
+     const movie = await GetMovie(movieId);
 
-     try {
-          movie = await GetMovie(Number(page));
-     } catch (error) {
-          throw new Error(`${error}`);
+     if (!movie) {
+          return <div>Movie not found</div>;
      }
 
      const variants = {
@@ -55,7 +52,8 @@ const page = async ({ params }: { params: Promise<{ movieId: string }> }) => {
                               <p className='mt-3'>Casts: </p>
                                    <div className='flex flex-col md:flex-row w-full items-center justify-between'>
                                         <div className='flex flex-wrap flex-row justify-start items-center gap-2 mt-1'>
-                                        {movie.movieCast.map(actor => (
+                                       
+                                        {movie.movieCast?.map(actor => (
                                              <CastCard key={actor.castId} castParams={actor}/>
                                         ))}
                                    </div>
