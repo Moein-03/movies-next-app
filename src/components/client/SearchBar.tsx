@@ -4,17 +4,12 @@ import { useState } from "react";
 import { searchMovies } from '@/movieActions'
 
 const SearchInput = () => {
-  const [query, setQuery] = useState('');
-  const [searching, setSearching] = useState(false);
   const [page, setPage] = useState(1);
 
   const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const input = new FormData(e.currentTarget).get('search') as string;
     const trimmed = input.trim();
-
-    setQuery(trimmed);
-    setSearching(trimmed.length > 0);
 
     if (trimmed.length > 0) {
       const res = await searchMovies(trimmed, page);
