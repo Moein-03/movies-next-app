@@ -65,7 +65,7 @@ const page = async ({ params }: { params: { movieId: string } }) => {
                </Suspense>
           ) : (
                <div className='flex h-screen w-full justify-center items-center'>
-                    <p>you didn't SignIn!</p>
+                    <p>you did not SignIn!</p>
                     <BackToMainPage/>
                </div>
           )}
