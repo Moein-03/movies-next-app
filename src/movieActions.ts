@@ -1,13 +1,27 @@
 "use server"
 import { MovieType } from "./DataType";
 
-export const GetMovie = async (page: number) => {
-    const res = await fetch(`https://my-json-server.typicode.com/moein-03/movies-next-app-api/movies?movieId=${'m' + page}&_page=${page}&_limit=1&_sort=productionYear&_order=desc`);
-    if (!res.ok) throw new Error('error in handle the data');
+export const GetMovies = async (page: number) => {
+    const res = await fetch(`https://my-json-server.typicode.com/moein-03/movies-next-app-api/movies?_page=${page}&_limit=10&_sort=productionYear&_order=desc`);
+    if (!res.ok) throw new Error('Error in fetching movies');
     const data = await res.json();
 
-    return data[0]  || null;
+    return Array.isArray(data) ? data : [];
 }
+
+export const GetMovie = async (movieId: string): Promise<MovieType | null> => {
+    try {
+        const res = await fetch(
+        `https://my-json-server.typicode.com/moein-03/movies-next-app-api/movies?movieId=${movieId}`
+        );
+        if (!res.ok) throw new Error('Error fetching movie');
+        const data = await res.json();
+        return data[0] || null;
+    } catch (e) {
+        console.error(e);
+        return null;
+    }
+};
 
 export const addView = async (movieId: string) => {
     try {
