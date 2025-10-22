@@ -1,5 +1,5 @@
 'use client';
-import { Suspense, useState, useEffect, useCallback, use } from 'react';
+import { Suspense, useState, useEffect, useCallback } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { GetMovie } from "@/movieActions";
 import { MovieType } from "@/DataType";
