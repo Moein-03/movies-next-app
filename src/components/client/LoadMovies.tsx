@@ -6,8 +6,9 @@ import { MovieType } from "@/DataType";
 import MovieCard from "../server/MovieCard";
 import LoadMovieFallBack from './LoadMovieFallBack';
 import { useSearchParams, useRouter } from "next/navigation";
+import { Session } from "next-auth"; 
 
-const LoadMovies = ({ session }: { session: any }) => {
+const LoadMovies = ({ session }: { session: Session | null }) => {
      const [page, setPage] = useState<number>(1);
      const [movies, setMovies] = useState<MovieType[]>([]);
      const [isLoading, setIsLoading] = useState<boolean>(false);
