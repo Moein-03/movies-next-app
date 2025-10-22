@@ -39,7 +39,7 @@ const page = async ({ params }: { params: Promise<{ movieId: string }> }) => {
                     >
                          <div className='w-[full] flex justify-center h-100 md:w-20%'>
                               <img
-                                   src={`https://my-json-server.typicode.com/moein-03/movies-next-app-api${movie.moviePic}`}
+                                   src="/2018-01-04-2017-movies-watched.jpg"
                                    alt={movie.movieTitle}
                                    className="w-[60%] md:w-[23rem] h-100"
                               />
