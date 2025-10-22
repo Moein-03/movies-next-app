@@ -1,6 +1,5 @@
 import Avatar from "./Avatar"
 import { auth } from "../../SessionAuth/server"
-import { Session } from "next-auth"
 const Navbar = async () => {
      const session = await auth();
 
