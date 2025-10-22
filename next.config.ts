@@ -1,4 +1,3 @@
-import { pattern } from "framer-motion/client";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -8,16 +7,9 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '6500',
-        pathname: '/movie/**',
-      },
-      {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '6500',
-        pathname: '/casts/**',
+        protocol: 'https',
+        hostname: 'my-json-server.typicode.com',
+        pathname: '/moein-03/movies-next-app-api/**',
       },
     ],
   },

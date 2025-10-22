@@ -1,4 +1,3 @@
-import React from 'react'
 import { GetMovie } from '@/movieActions';
 import { MovieType } from '@/DataType';
 import { Suspense } from 'react';
@@ -42,7 +41,7 @@ const page = async ({ params }: { params: { movieId: string } }) => {
                     >
                          <div className='w-[full] flex justify-center h-100 md:w-20%'>
                               <img
-                                   src={`http://localhost:6500${movie.moviePic}`}
+                                   src={`https://my-json-server.typicode.com/moein-03/movies-next-app-api${movie.moviePic}`}
                                    alt={movie.movieTitle}
                                    className="w-[60%] md:w-[23rem] h-100"
                               />

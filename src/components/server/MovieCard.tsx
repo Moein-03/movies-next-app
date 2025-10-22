@@ -23,7 +23,7 @@ const MovieCard = ({ movie, index, session }: { movie: MovieType, index: number,
           >
                <figure className='w-[1200px] h-full relative'>
                     <Image
-                         src={`http://localhost:6500${movie.moviePic}`}
+                         src={`https://my-json-server.typicode.com/moein-03/movies-next-app-api${movie.moviePic}`}
                          alt={movie.movieTitle}
                          fill
                          className="object-cover"
