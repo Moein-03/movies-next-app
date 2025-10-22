@@ -7,9 +7,10 @@ import MoviePageFallback from '@/components/server/MoviePageFallback';
 import BackToMainPage from '@/components/client/ClientButtons/BackToMainPage';
 import { auth } from '@/SessionAuth/server';
 
-const page = async ({ params }: { params: { movieId: string } }) => {
+const page = async ({ params }: { params: Promise<{ movieId: string }> }) => {
      const session = await auth();
-     const { movieId } = params;
+     const resolvedParams = await params;
+     const movieId = resolvedParams.movieId;
      const page = movieId.slice(1, movieId.length);
      let movie: MovieType;
 
