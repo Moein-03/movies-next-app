@@ -16,7 +16,7 @@ const page = async ({ params }: { params: { movieId: string } }) => {
      try {
           movie = await GetMovie(Number(page));
      } catch (error) {
-          throw new Error('not Found');
+          throw new Error(`${error}`);
      }
 
      const variants = {
