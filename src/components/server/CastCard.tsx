@@ -6,7 +6,7 @@ const CastCard = ({ castParams }: { castParams: CastType }) => {
           <div className="card bg-base-100 w-25 h-40 shadow-sm">
                <figure className="px-2 mt-2">
                     <img
-                         src="/single-man-icon-people-icon-user-profile-symbol-person-symbol-businessman-stock-vector.jpg"
+                         src="/single-man-icon.jpg"
                          alt="Shoes"
                          className="rounded-xl" 
                     />
