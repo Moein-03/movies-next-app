@@ -1,7 +1,7 @@
-'use client';
+"use client";
 import { Suspense, useState, useEffect, useCallback } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { GetMovie } from "@/movieActions";
+import { GetMovies } from "@/movieActions";
 import { MovieType } from "@/DataType";
 import MovieCard from "../server/MovieCard";
 import LoadMovieFallBack from './LoadMovieFallBack';
@@ -16,31 +16,35 @@ const LoadMovies = ({ session }: { session: Session | null }) => {
      const { ref, inView } = useInView();
      const [Input, setInput] = useState<string>('');
 
-     const fetchMovie = async (page: number) => {
+     const fetchMovie = async (page: number): Promise<MovieType[]> => {
           try {
-               const movie = await GetMovie(page)
-               return movie
+               const movies = await GetMovies(page);
+               console.log('Fetched movies:', movies);
+               return movies;
           } catch (e) {
-               console.error(e)
-               return null
+               console.error(e);
+               return [];
           }
-     }
+     };
 
      const loadMovie = useCallback(async () => {
-          if (!hasMore || isLoading) return
-          setIsLoading(true)
+          if (!hasMore || isLoading) return;
+          setIsLoading(true);
 
-          const newMovie = await fetchMovie(page)
+          const newMovies = await fetchMovie(page);
 
-          if (!newMovie) {
-               setHasMore(false)
-          } else if (!movies.some(m => m.movieId === newMovie.movieId)) {
-               setMovies(prev => [...prev, newMovie])
-               setPage(prev => prev + 1)
+          if (newMovies.length === 0) {
+               setHasMore(false);
+          } else {
+               setMovies((prev) => [
+                    ...prev,
+                    ...newMovies.filter((m: MovieType) => !prev.some((prevM) => prevM.movieId === m.movieId)),
+               ]);
+               setPage((prev) => prev + 1);
           }
 
-          setIsLoading(false)
-     }, [page, hasMore, isLoading, movies])
+          setIsLoading(false);
+     }, [page, hasMore, isLoading, movies]);
 
      useEffect(() => {
           if (inView) loadMovie()
