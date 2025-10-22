@@ -6,7 +6,7 @@ const CastCard = ({ castParams }: { castParams: CastType }) => {
           <div className="card bg-base-100 w-25 h-40 shadow-sm">
                <figure className="px-2 mt-2">
                     <img
-                         src={`https://my-json-server.typicode.com/moein-03/movies-next-app-api${castPic}`}
+                         src="/single-man-icon-people-icon-user-profile-symbol-person-symbol-businessman-stock-vector.jpg"
                          alt="Shoes"
                          className="rounded-xl" 
                     />
