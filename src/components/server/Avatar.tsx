@@ -3,7 +3,7 @@ import SignInBtn from "../client/ClientButtons/SignInBtn";
 import SignOutBtn from "../client/ClientButtons/SignOutBtn";
 import { Session } from "next-auth";
 
-const Avatar =  ( { session }: { session: Session }) => {
+const Avatar =  ( { session }: { session: Session | null }) => {
 
      return (
           <div className="flex gap-2">
